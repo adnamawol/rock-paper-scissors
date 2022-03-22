@@ -10,15 +10,66 @@
 </head>
 
 <body>
-    <h1>Let's get ready for a game of Scissors, Paper, Stone!</h1>
-    <div id="container">
-        <button id="scissors">✂️</button>
-        <button id="paper">📝</button>
-        <button id="stone">🪨</button>
+    <div class="header">
+        <h1>ScIsSoRs PaPeR sToNe</h1>
+        <audio class="scissors-audio" src="./audio/scissors.mp3"></audio>
+        <audio class="paper-audio" src="./audio/paper.mp3"></audio>
+        <audio class="stone-audio" src="./audio/stone.mp3"></audio>
     </div>
 
-    <div id="results">
+    <div id="btns">
+        <img src="./photos/victory.png" alt="Scissors" id="scissors" class="choice">
+        <img src="./photos/hand.png" alt="Paper" id="paper" class="choice">
+        <img src="./photos/rock.png" alt="Stone" id="stone" class="choice"><br>
 
+    </div>
+
+    <div id="choice">
+    
+        <div id="player-container">
+            <div class="choice-header">
+                <h3>You chose:</h3>
+            </div>
+            <div id="player">
+
+            </div>
+            <div id="player-result">
+
+            </div>
+        </div>
+    
+        <div id="comp-container">
+            <div class="choice-header">
+                <h3>The Machine chose:</h3>
+            </div>
+            <div id="comp">
+
+            </div>
+            <div id="comp-result">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box">
+        <div id="container">
+        
+        </div>
+
+    </div>
+    
+    
+
+    <div class="restart-box">
+        <button id="restart">Reset the Game</button>
+    </div>
+
+    <div class="footer">
+        <div>Icons by <a href="https://www.flaticon.com/authors/freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dooder">Dooder</a> from <a href="">Flat Icon</a> | Audio from <a href="https://www.zapsplat.com/">Zapsplat</a><br></div>
+        <br><a target="_blank" href="https://github.com/adnamawol"><img class="icon" src="./photos/GitHub-Mark-32px.png" alt="GitHub Icon"></a>
+        <strong> Copyright © The Odin Project 2022</strong>
     </div>
 </body>
+
 </html>
