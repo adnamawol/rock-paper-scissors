@@ -2,64 +2,55 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Scissors, Paper, Stone</title>
+    <title>Rock, Paper, Scissors</title>
     <script defer src="./script.js"></script>
     <link rel="stylesheet" href="./style.css">
-    
-
 </head>
 
 <body>
     <div class="header">
-        <h1>ScIsSoRs PaPeR sToNe</h1>
+        <h1>RoCk PaPeR sCisSoRs</h1>
         <audio class="scissors-audio" src="./audio/scissors.mp3"></audio>
         <audio class="paper-audio" src="./audio/paper.mp3"></audio>
         <audio class="stone-audio" src="./audio/stone.mp3"></audio>
     </div>
 
-    <div id="btns">
-        <img src="./photos/victory.png" alt="Scissors" id="scissors" class="choice">
-        <img src="./photos/hand.png" alt="Paper" id="paper" class="choice">
-        <img src="./photos/rock.png" alt="Stone" id="stone" class="choice"><br>
-
+    <div id="instructions">
+        <div>
+            <h4>Be the first to score 5 points to win</h4><br>
+        </div>
+        <div id="btns">
+            <img src="./photos/rock.png" alt="Stone" id="stone" class="choice"><br>
+            <img src="./photos/hand.png" alt="Paper" id="paper" class="choice"><br>
+            <img src="./photos/victory.png" alt="Scissors" id="scissors" class="choice">
+        </div>
     </div>
 
     <div id="choice">
-    
         <div id="player-container">
             <div class="choice-header">
                 <h3>You chose:</h3>
             </div>
             <div id="player">
-
             </div>
             <div id="player-result">
-
             </div>
         </div>
-    
         <div id="comp-container">
             <div class="choice-header">
                 <h3>The Machine chose:</h3>
             </div>
             <div id="comp">
-
             </div>
             <div id="comp-result">
-
             </div>
         </div>
-
     </div>
 
     <div class="box">
         <div id="container">
-        
         </div>
-
     </div>
-    
-    
 
     <div class="restart-box">
         <button id="restart">Reset the Game</button>

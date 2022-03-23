@@ -2,6 +2,13 @@ const container = document.querySelector('#container');
 const results = document.querySelector('#results');
 const playerCumResult = document.querySelector('#player-result');
 const compCumResult = document.querySelector('#comp-result');
+const player = document.querySelector('#player');
+const comp = document.querySelector('#comp')
+const scissorsBtn = document.querySelector('#scissors');
+const paperBtn = document.querySelector('#paper');
+const stoneBtn = document.querySelector('#stone');
+
+
 const para = document.createElement('p');
 const playerResult = document.createElement('p');
 const compResult = document.querySelector('p');
@@ -9,21 +16,10 @@ const resultPlayerPic = document.createElement('img');
 const resultCompPic = document.createElement('img');
 
 
-const player = document.querySelector('#player');
-const comp = document.querySelector('#comp')
+//play a round of RPS
 
-
-const scissorsBtn = document.querySelector('#scissors');
-const paperBtn = document.querySelector('#paper');
-const stoneBtn = document.querySelector('#stone');
-
-
-
-scissorsBtn.addEventListener('click', () => playRound("scissors",computerPlay()));
-paperBtn.addEventListener('click',() => playRound("paper",computerPlay()));
-stoneBtn.addEventListener('click', () => playRound("stone",computerPlay()));
-
-
+let compCumScore = 0;
+let playerCumScore = 0;
 
 function computerPlay () {
     let spsChoice = ["scissors", "paper", "stone"];
@@ -32,9 +28,6 @@ function computerPlay () {
     return computerChoice;
 }
 
-let compCumScore = 0;
-let playerCumScore = 0;
-
 function playRound (playerSelection, computerSelection) {
     if (computerSelection === "scissors" && playerSelection === "paper") {
         para.textContent="The Machine gains 1 point, and you gain nothing.";
@@ -42,10 +35,8 @@ function playRound (playerSelection, computerSelection) {
 
         resultPlayerPic.src='./photos/hand.png';
         player.appendChild(resultPlayerPic); 
-
         resultCompPic.src='./photos/victory.png';
         comp.appendChild(resultCompPic);
-
 
         compCumScore += 1;
     } else if (computerSelection === "paper" && playerSelection === "scissors") {
@@ -54,7 +45,6 @@ function playRound (playerSelection, computerSelection) {
 
         resultPlayerPic.src='./photos/victory.png';
         player.appendChild(resultPlayerPic);
-
         resultCompPic.src='./photos/hand.png';
         comp.appendChild(resultCompPic);
 
@@ -65,7 +55,6 @@ function playRound (playerSelection, computerSelection) {
 
         resultPlayerPic.src='./photos/rock.png';
         player.appendChild(resultPlayerPic);
-
         resultCompPic.src='./photos/victory.png';
         comp.appendChild(resultCompPic);
 
@@ -76,7 +65,6 @@ function playRound (playerSelection, computerSelection) {
 
         resultPlayerPic.src='./photos/victory.png';
         player.appendChild(resultPlayerPic);
-
         resultCompPic.src='./photos/rock.png';
         comp.appendChild(resultCompPic);
 
@@ -87,7 +75,6 @@ function playRound (playerSelection, computerSelection) {
 
         resultPlayerPic.src='./photos/rock.png';
         player.appendChild(resultPlayerPic);
-
         resultCompPic.src='./photos/hand.png';
         comp.appendChild(resultCompPic);
 
@@ -98,7 +85,6 @@ function playRound (playerSelection, computerSelection) {
 
         resultPlayerPic.src='./photos/victory.png';
         player.appendChild(resultPlayerPic);
-
         resultCompPic.src='./photos/rock.png';
         comp.appendChild(resultCompPic);
 
@@ -109,13 +95,10 @@ function playRound (playerSelection, computerSelection) {
 
         resultPlayerPic.src='./photos/dead.png';
         player.appendChild(resultPlayerPic);
-
         resultCompPic.src='./photos/dead.png';
         comp.appendChild(resultCompPic);
 
     } 
-    playerCumResult.textContent=`You: ${playerCumScore}`;
-    compCumResult.textContent=`The Machine: ${compCumScore}`;
 
     if (compCumScore === 5) {
         alert("Sorry, you lost to the Machine!");
@@ -127,8 +110,19 @@ function playRound (playerSelection, computerSelection) {
         reset();
         return;
     }
+
+    playerCumResult.textContent=`You: ${playerCumScore}`;
+    compCumResult.textContent=`The Machine: ${compCumScore}`;
+
 }
 
+
+scissorsBtn.addEventListener('click', () => playRound("scissors",computerPlay()));
+paperBtn.addEventListener('click',() => playRound("paper",computerPlay()));
+stoneBtn.addEventListener('click', () => playRound("stone",computerPlay()));
+
+
+//restart
 const restartBtn = document.querySelector('#restart');
 restartBtn.addEventListener('click', () => reset())
 
@@ -142,7 +136,7 @@ function reset () {
     container.removeChild(para);
 }
 
-
+//audio on mouserover
 const audioScissors = document.querySelector('.scissors-audio');
 const audioPaper = document.querySelector('.paper-audio');
 const audioStone = document.querySelector('.stone-audio')
